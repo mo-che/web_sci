@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+  db_bandit:
+    image: postgres
+    restart: always
+  web_bandit:
+    build: ./bandit
+    command: sh /code/run.sh
+    volumes:
+      - ./bandit:/code
+      - /tmp:/tmp
+
+    depends_on:
+      - db_bandit
+  nginx_bandit:
+      image: nginx:latest
+      ports:
+        - "80:80"
+      volumes:
+        - /tmp:/tmp
+        - ./nginx/:/etc/nginx/conf.d/
+      depends_on:
+        - web_bandit

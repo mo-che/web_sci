@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SCITU Bandit</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/uikit.min.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/hamburger.css' %}" />
+    <script src="{% static 'home/uikit.min.js' %}"></script>
+</head>
+
+<body>
+    <div class="uk-position-relative">
+        <nav class="uk-navbar-container" uk-navbar="dropbar: true" style="background-color:#bb0404">
+            <div class="uk-navbar-left">
+              <a href="http://127.0.0.1:8000/home/">
+                  <img src="{% static 'home/pictures/b.png' %}" style="width:300px; margin: 10px;" />
+              </a>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                  <li>
+                      <a href="http://127.0.0.1:8000/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
+                  </li>
+                  <li>
+                      <a href="http://127.0.0.1:8000/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
+                  </li>
+                  <li>
+                      <a href="http://127.0.0.1:8000/contact/">ติดต่อเรา</a>
+                  </li>
+                </ul>
+                <div class="dropdown">
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                    <div class="dropdown-content">
+                        <a href="http://127.0.0.1:8000/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
+                        <a href="http://127.0.0.1:8000/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
+                        <a href="http://127.0.0.1:8000/contact/">ติดต่อเรา</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+        <div class="uk-card uk-card-primary uk-card-body uk-light" style="background-color:#ffd000">
+            <h2>
+                <span class=".uk-text-lead">ติดต่อสอบถาม</span>
+            </h2>
+            <p>งานบัณฑิตศึกษา ชั้น3 อาหารบรรยายรวม 5
+                <br> คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์
+                <br>
+                <i class="fa fa-home"></i> ที่อยู่ : 99 ม.18 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12121
+                <br>
+                <i class="fa fa-phone"></i> โทรศัพท์ : 02-5644490 ต่อ 2094
+                <br>
+                <i class="fa fa-envelope"></i> อีเมล์ : grad@sci.tu.ac.th
+            </p>
+        </div>
+        <div class="uk-card-body">
+            <div>
+                <form>
+                    <fieldset class="uk-fieldset">
+                        <legend class="uk-legend" style="margin-left:20px;">ชื่อ นามสกุล</legend>
+                        <div class="uk-margin" style="margin-left:20px;">
+                            <input class="uk-input  uk-form-width-large" type="text">
+                        </div>
+                        <legend class="uk-legend" style="margin-left:20px;">รหัสนักศึกษา (ถ้ามี)</legend>
+                        <div class="uk-margin" style="margin-left:20px;">
+                            <input class="uk-input  uk-form-width-large" type="text">
+                        </div>
+                        <legend class="uk-legend" style="margin-left:20px;">สาขาวิชา (ถ้ามี)</legend>
+                        <div class="uk-margin" style="margin-left:20px;">
+                            <input class="uk-input uk-form-width-large" type="text">
+                        </div>
+                        <legend class="uk-legend" style="margin-left:20px;">Email address *</legend>
+                        <div class="uk-margin" style="margin-left:20px;">
+                            <input class="uk-input uk-form-width-large" type="text">
+                        </div>
+                        <legend class="uk-legend" style="margin-left:20px;">รายละเอียด *</legend>
+                        <div class="uk-margin" style="margin-left:20px;">
+                            <textarea class="uk-textarea uk-form-width-large" rows="5"></textarea>
+                        </div>
+                        <button class="uk-button uk-button-primary" style="margin-left:20px;">submit</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="uk-position-relative">
+        <nav class="uk-navbar-container" uk-navbar="dropbar: true" style="background-color:#bb0404; height:118px;">
+            <div class="uk-navbar-left">
+                <a href="demo.html" style="visibility:hidden">
+                    aaa
+                </a>
+            </div>
+        </nav>
+    </div>
+</body>
+</html>

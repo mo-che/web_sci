@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SCITU</title>
+    {% load staticfiles %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'home/uikit.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'home/hamburger.css' %}" />
+    <script src="{% static 'home/uikit.min.js' %}"></script>
+</head>
+<body>
+  <div class="uk-position-relative">
+      <nav class="uk-navbar-container" uk-navbar="mode: click" style="background-color:#bb0404">
+          <div class="uk-navbar-left">
+              <a href="/">
+                  <img src="{% static 'home/pictures/b.png' %}" style="width:300px; margin: 10px;" />
+              </a>
+          </div>
+          <div class="uk-navbar-right">
+              <ul class="uk-navbar-nav">
+                  <li>
+                      <a href="#">บัณฑิตศึกษา</a>
+                      <div class="uk-navbar-dropdown">
+                          <ul class="uk-nav uk-navbar-dropdown-nav">
+                              <li><a href="http://graduate.sci.tu.ac.th:10146/login" style="color:gray;">- สำหรับนักศึกษา</a></li>
+                              <li><a href="http://hrdb.sci.tu.ac.th:10146/login" style="color:gray;">- สำหรับเจ้าหน้าที่</a></li>
+                          </ul>
+                      </div>
+                  </li>
+                  <li>
+                      <a href="/register/">การรับสมัคร</a>
+                  </li>
+                  <li>
+                      <a href="/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
+                  </li>
+                  <li>
+                      <a href="/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
+                  </li>
+              </ul>
+              <div class="dropdown">
+                  <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                  <div class="dropdown-content">
+                    <a href="/register/">การรับสมัคร</a>
+                    <a href="/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
+                    <a href="/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
+                    <a href="http://graduate.sci.tu.ac.th:10146/login">- สำหรับนักศึกษา</a>
+                    <a href="http://hrdb.sci.tu.ac.th:10146/login">- สำหรับเจ้าหน้าที่</a>
+                  </div>
+              </div>
+          </div>
+      </nav>
+  </div>
+    <div style="margin-left:20px; margin-top:20px;">
+        <h3>{{form.title}}</h3>
+        <table class="uk-table uk-table-divider uk-table-hover">
+            <tbody>
+                  <tr>
+                      <td style="width:20%;">{{ form.content|linebreaks }}</td>
+                  </tr>
+                  <tr>
+                      <td style="width:20%;">Download : <a class=".uk-text-lead" href="/files/{{form.file}}" download>{{ form.file }}</a> </td>
+                  </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid style="background-color:#bb0404;color:white;margin-top:20px;">
+        <div style="text-align:center;margin-top:10px; margin-bottom:10px;">
+          <span class=".uk-text-lead">ติดต่อสอบถาม</span><br>
+          งานบัณฑิตศึกษา ชั้น3 อาหารบรรยายรวม 5
+          <br> คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์
+          <br>
+        </div>
+        <div style="text-align:left;">
+          <p style="margin-top:10px;">
+            <i class="fa fa-home"></i> ที่อยู่ : 99 ม.18 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12121
+            <br>
+            <i class="fa fa-phone"></i> โทรศัพท์ : 02-5644490 ต่อ 2094
+            <br>
+            <i class="fa fa-envelope"></i> อีเมล์ : grad@sci.tu.ac.th
+          </p>
+          <br>
+        </div>
+    </div>
+    <div style="background-color:#c4ce00;color:white;height:30px;">
+      <a style="visibility:hidden">a</a>
+    </div>
+</body>
+</html>

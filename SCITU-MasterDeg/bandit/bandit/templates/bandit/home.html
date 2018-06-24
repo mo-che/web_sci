@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DEMO TU</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./uikit-3.0.0-beta.40/css/uikit.min.css" />
+    <link rel="stylesheet" type="text/css" href="./uikit-3.0.0-beta.40/css/hamburger.css" />
+    <script src="./uikit-3.0.0-beta.40/js/uikit.min.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="uk-position-relative">
+        <nav class="uk-navbar-container" uk-navbar="dropbar: true" style="background-color:#bb0404">
+            <div class="uk-navbar-left">
+
+                <a href="demo.html">
+                    <img src="a.png" style="width:450px; margin: 10px;" />
+                </a>
+            </div>
+            <div class="uk-navbar-right">
+                <ul class="uk-navbar-nav">
+                    <li>
+                        <a href="kamrong.html">แบบคำร้อง/เอกสารบัณฑิต</a>
+                    </li>
+                    <li>
+                        <a href="meeting.html">รายงานการประชุมกรรมการบัณฑิต</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">ติดต่อเรา</a>
+                    </li>
+                </ul>
+                <div class="dropdown">
+                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
+                    <div class="dropdown-content">
+                        <a href="kamrong.html">แบบคำร้อง/เอกสารบัณฑิต</a>
+                        <a href="meeting.html">รายงานการประชุมกรรมการบัณฑิต</a>
+                        <a href="contact.html">ติดต่อเรา</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- <div class="uk-navbar-dropbar"></div> -->
+
+    </div>
+
+    <div uk-slideshow="animation: push; min-height: 300; max-height: 800; autoplay: true" uk-scrollspy="cls:uk-animation-fade">
+
+        <div class="uk-position-relative uk-visible-toggle uk-light">
+
+            <ul class="uk-slideshow-items">
+
+                <li>
+                    <img src="1.jpg" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom" style="height:4em;">
+                        <a>
+                            <h2>มหาวิทยาลัยสีเขียว</h2>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="2.jpg" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom" style="height:4em">
+                        <a>
+                            <h2>มหาวิทยาลัยสีเขียว ท่าพระจันทร์</h2>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <img src="3.jpg" alt="" uk-cover>
+                    <div class="uk-overlay uk-overlay-primary uk-position-bottom" style="height:4em">
+                        <a>
+                            <h2>นักศึกษาของมหาวิทยาลัยสีเขียว</h2>
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div style="width:100%; height:90%; background-color:transparent;">
+                        <iframe style="width:100%; height:100%;" src="https://www.youtube.com/embed/ltoO6WbFQWA"></iframe>
+                    </div>
+                    <div style="height:5em; background-color:black; padding-top:1%;">
+                        <a>
+                            <h2>วีดีโอมหาวิทยาลัยสีเขียว</h2>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+
+            <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+            <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+        </div>
+
+        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></ul>
+
+    </div>
+
+    <div style="margin-left:20px;" uk-scrollspy="cls:uk-animation-fade">
+        <!-- <h3>
+            <span class=".uk-text-lead">ข่าวประชาสัมพันธ์
+
+                <a style="font-size:15px;" href="newslist.html">(ดูทั้งหมด)</a>
+
+            </span>
+        </h3> -->
+
+
+
+        <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+            <div class="uk-card-media-left uk-cover-container" style="padding-right:40px">
+                <table class="uk-table uk-table-middle uk-table-divider">
+
+                    <tbody>
+                        <h3>
+                            <span class=".uk-text-lead">ข่าวประชาสัมพันธ์
+                                <a style="font-size:15px;" href="newslist.html">(ดูทั้งหมด)</a>
+                            </span>
+                        </h3>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>23 ก.พ. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">รายชื่อผู้มีสิทธิ์สอบภาษาต่างประเทศ หลักสูตรปรัชญาดุษฎีบัณฑิต ช่วงที่ 1/2561</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15 ก.พ. 2561</td>
+                            <td>
+                                <a class=".uk-text-bold">ประกาศผลพิจารณาทุนบัณฑิตเรียนดีเพื่อศึกษาต่อระดับบัณฑิตศึกษา</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15 ก.พ. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">ประกาศเปิดรับวิทยานิพนธ์เพื่อเข้ารับการพิจารณารางวัลวิทยานิพนธ์ดีเด่น</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9 ก.พ. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">ปฏทินกิจกรรม ทุนสนับสนุนการวิจัย ของปี2561</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17 ม.ค. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">การรับสมัครสอบภาษาต่างประเทศ ระดับปริญญาเอก ครั้งที่ 1</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div class="uk-card-media-left uk-cover-container" style="padding-left:20px">
+                <table class="uk-table uk-table-middle uk-table-divider">
+
+                    <tbody>
+                        <h3>
+                            <span class=".uk-text-lead">ข่าวทุนการศึกษา
+                                <a style="font-size:15px;" href="newslist.html">(ดูทั้งหมด)</a>
+                            </span>
+                        </h3>
+                        <tr>
+                        </tr>
+                        <tr>
+                            <td>23 มี.ค. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">ประกาศเปิดรับข้อเสนอโครงการวิจัย เพื่อขอรับทุนสนับสนุนการวิจัย ประเภททุนวิจัยทั่วไป</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15 ก.พ. 2561</td>
+                            <td>
+                                <a class=".uk-text-bold">ประกาศเปิดรับวิทยานิพนธ์เพื่อเข้ารับการพิจารณารางวัลวิทยานิพนธ์ดีเด่น</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9 ก.ย. 2561</td>
+                            <td>
+                                <a class=".uk-text-lead">เปิดรับสมัครผู้ขอรับทุนนำเสนอผลงานวิทยานิพนธ์/สารนิพนธ์ในต่างประเทศและในประเทศ</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+
+    <div class="uk-position-relative">
+        <nav class="uk-navbar-container" uk-navbar="dropbar: true" style="background-color:#bb0404; height:118px;">
+            <div class="uk-navbar-left">
+
+                <a href="demo.html" style="visibility:hidden">
+                    aaa
+                </a>
+            </div>
+
+        </nav>
+    </div>
+</body>
+
+</html>
