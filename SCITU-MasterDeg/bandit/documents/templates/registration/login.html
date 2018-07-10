@@ -1,0 +1,21 @@
+{% load staticfiles %}
+{% block header %}
+  {% include 'home/base.html' %}
+{% endblock %}
+
+<div style="margin-left:20px; margin-top:20px; text-align: center">
+
+        {% block content %}
+        <h2>Login</h2>
+         <form method="post">
+               {% csrf_token %}
+               {{ form.as_p }}
+        <button type="submit">Login</button>
+        </form>
+        {% endblock %}
+
+</div>
+
+{% block footer %}
+  {% include 'home/base2.html' %}
+{% endblock %}

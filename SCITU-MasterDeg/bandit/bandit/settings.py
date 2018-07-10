@@ -14,10 +14,20 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'files')
 
 MEDIA_URL = "/files/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'files/')
+MEDIA_ROOT = "/var/www/bandit/files/"
+MEDIA_DIRS = [
+    os.path.join(BASE_DIR, 'files', "files"),
+]
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'home', "static"),
+]
+STATIC_ROOT = "/var/www/bandit/static/"
+STATIC_URL = '/static/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -28,8 +38,9 @@ SECRET_KEY = 'ni%(q1pnfkyx)5fm4*#9$o!#b+hgn4aq6rg(y=^6%hs&d#cp%2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['web1']
-
+ALLOWED_HOSTS = ['web1','localhost']
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/' 
 
 # Application definition
 
@@ -46,6 +57,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -131,5 +143,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
-STATIC_ROOT = '/tmp/'
+# STATIC_URL = '/static/'
+# STATIC_ROOT = '/tmp/'

@@ -4,21 +4,25 @@ services:
   db_bandit:
     image: postgres
     restart: always
+
   web_bandit:
     build: ./bandit
     command: sh /code/run.sh
     volumes:
       - ./bandit:/code
-      - /tmp:/tmp
+      - /var/www/bandit/static/:/var/www/bandit/static/
+      - /var/www/bandit/files/:/var/www/bandit/files/
 
     depends_on:
       - db_bandit
+
   nginx_bandit:
       image: nginx:latest
       ports:
         - "80:80"
       volumes:
-        - /tmp:/tmp
+        - /var/www/bandit/static/:/var/www/bandit/static/
+        - /var/www/bandit/files/:/var/www/bandit/files/
         - ./nginx/:/etc/nginx/conf.d/
       depends_on:
         - web_bandit

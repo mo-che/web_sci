@@ -14,17 +14,17 @@
     <input type='checkbox' value='true' v-model='onlyMe' style="margin-left:5%"> งานของฉัน
   </form>
   {% endif %}
-  <table class='uk-table uk-table-striped uk-table-hover  uk-table-small'>
-    <caption style="margin-left:1%">งานแจ้งซ่อม</caption>
+  <table class='uk-table uk-table-striped uk-table-hover uk-table-small'>
+    <caption style="margin-left:1%; font-size: 16px;">งานแจ้งซ่อม</caption>
     <thead>
-      <tr style="background-color:rgb(247, 238, 189);margin-left:3%;" >
-        <th style="color:rgb(52, 52, 54)"> หัวเรื่อง </th>
-        <th style="color:rgb(52, 52, 54)"> ฝ่าย </th>
-        <th style="color:rgb(52, 52, 54)"> คำอธิบาย </th>
-        <th style="color:rgb(52, 52, 54)"> ตึก </th>
-        <th style="color:rgb(52, 52, 54)"> ชั้น </th>
-        <th style="color:rgb(52, 52, 54)"> ห้อง </th>
-        <th style="color:rgb(52, 52, 54)"> สถานะ </th>
+      <tr style="background-color:#c00832;margin-left:3%;" >
+        <th style="color:white; font-size: 16px;"> หัวเรื่อง </th>
+        <th style="color:white; font-size: 16px;"> ฝ่าย </th>
+        <th style="color:white; font-size: 16px;"> คำอธิบาย </th>
+        <th style="color:white; font-size: 16px;"> ตึก </th>
+        <th style="color:white; font-size: 16px;"> ชั้น </th>
+        <th style="color:white; font-size: 16px;"> ห้อง </th>
+        <th style="color:white; font-size: 16px;"> สถานะ </th>
       </tr>
     </thead>
     <tbody v-for='task in taskList'>

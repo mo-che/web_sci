@@ -1,70 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SCITU</title>
-    {% load staticfiles %}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="{% static 'home/uikit.min.css' %}" />
-    <link rel="stylesheet" type="text/css" href="{% static 'home/hamburger.css' %}" />
-    <script src="{% static 'home/uikit.min.js' %}"></script>
-    <style>
-    </style>
-</head>
-<body>
-    <div class="uk-position-relative">
-        <nav class="uk-navbar-container" uk-navbar="mode: click" style="background-color:#bb0404">
-            <div class="uk-navbar-left">
-                <a href="/">
-                    <img src="{% static 'home/pictures/b.png' %}" style="width:300px; margin: 10px;" />
-                </a>
-            </div>
-            <div class="uk-navbar-right">
-                <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#">บัณฑิตศึกษา</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li><a href="http://graduate.sci.tu.ac.th:10146/login" style="color:gray;">- สำหรับนักศึกษา</a></li>
-                                <li><a href="http://hrdb.sci.tu.ac.th:10146/login" style="color:gray;">- สำหรับเจ้าหน้าที่</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="/register/">การรับสมัคร</a>
-                    </li>
-                    <li>
-                        <a href="/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
-                    </li>
-                    <li>
-                        <a href="/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
-                    </li>
-                </ul>
-                <div class="dropdown">
-                    <a class="uk-navbar-toggle" uk-navbar-toggle-icon href="#"></a>
-                    <div class="dropdown-content">
-                      <a href="/register/">การรับสมัคร</a>
-                      <a href="/documents/">แบบคำร้อง/เอกสารบัณฑิต</a>
-                      <a href="/meeting/">รายงานการประชุมกรรมการบัณฑิต</a>
-                      <a href="http://graduate.sci.tu.ac.th:10146/login">- สำหรับนักศึกษา</a>
-                      <a href="http://hrdb.sci.tu.ac.th:10146/login">- สำหรับเจ้าหน้าที่</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </div>
-    <div uk-slideshow="animation: push; min-height: 300; max-height: 800; autoplay: true" uk-scrollspy="cls:uk-animation-fade">
-        <div class="uk-position-relative uk-visible-toggle uk-light">
-            <ul class="uk-slideshow-items">
+{% load staticfiles %}
+{% block header %}
+  {% include 'home/base.html' %}
+{% endblock %}
+
+{% block content  %}
+
+    <div style="position: relative;" uk-slideshow="animation: push; min-height: 300; max-height: 500; autoplay: true" uk-scrollspy="cls:uk-animation-fade">
+        <div class="uk-position-relative uk-visible-toggle uk-light" >
+            <ul class="uk-slideshow-items" >
                 <li>
-                    <img src="{% static 'home/pictures/1.jpg' %}" alt="" uk-cover>
+                    <img src="{% static 'home/pictures/1.jpg' %}" alt="" uk-cover height="500" width="1100">
                 </li>
                 <li>
-                    <img src="{% static 'home/pictures/2.jpg' %}" alt="" uk-cover>
+                    <img src="{% static 'home/pictures/2.jpg' %}" alt="" uk-cover height="500" width="1100">
                 </li>
                 <li>
-                    <img src="{% static 'home/pictures/3.jpg' %}" alt="" uk-cover>
+                    <img src="{% static 'home/pictures/3.jpg' %}" alt="" uk-cover height="500" width="1100">
                 </li>
                 <li>
                     <div style="width:100%; height:90%; background-color:transparent;">
@@ -80,63 +31,50 @@
     <div style="margin-left:20px;" uk-scrollspy="cls:uk-animation-fade">
       <table class="uk-table uk-table-middle uk-table-divider">
           <tbody >
+              <br><br>
               <h3>
-                  <span class=".uk-text-lead">ข่าวประชาสัมพันธ์
-                      <a style="font-size:15px;" href="/news/public/">(ดูทั้งหมด)</a>
+                  <span class=".uk-text-lead" style="font-size: 20px;font-weight: bold; font-family: Kanit">ข่าวประชาสัมพันธ์
+                      <a style="font-size:15px;font-family: Kanit" href="/news/public/">(ดูทั้งหมด)</a>
                   </span>
               </h3>
-              {% for public in all_public %}
-                <tr>
-                    <td style="width:20%">{{ public.date }}</td>
-                    <td>
-                        <a class=".uk-text-lead" href="/news/public/{{ public.id }}/">{{ public.title }}</a>
-                    </td>
-                </tr>
+              
+            {% for public in all_public %}
+                
+                    <tr>
+                        <td style="width:20%;font-family: Kanit">{{ public.date }}</td>
+                        <td>
+                            <a class=".uk-text-lead"  href="/news/public/{{ public.id }}/" style="font-family: Kanit">{{ public.title }}</a>
+                        </td>
+                    </tr>
               {% endfor %}
           </tbody>
       </table>
       <table class="uk-table uk-table-middle uk-table-divider">
           <tbody>
               <h3>
-                  <span class=".uk-text-lead">ข่าวทุนการศึกษา
-                      <a style="font-size:15px;" href="/news/fund/">(ดูทั้งหมด)</a>
+                  <span class=".uk-text-lead" style="font-size: 20px;font-weight: bold;font-family: Kanit">ข่าวทุนการศึกษา
+                      <a style="font-size:15px;font-family: Kanit" href="/news/fund/">(ดูทั้งหมด)</a>
                   </span>
               </h3>
               {% for fund in all_fund %}
-                <tr>
-                    <td style="width:20%">{{ fund.date }}</td>
-                    <td>
-                        <a class=".uk-text-lead" href="/news/fund/{{ fund.id }}/">{{ fund.title }}</a>
-                    </td>
-                </tr>
+                
+                    <tr>
+                        <td style="width:20%;font-family: Kanit">{{ fund.date }}</td>
+                        <td>
+                            <a class=".uk-text-lead" href="/news/fund/{{ fund.id }}/" style="font-family: Kanit">{{ fund.title }}</a>
+                        </td>
+                    </tr>
+              
               {% endfor %}
           </tbody>
       </table>
     </div>
+{% endblock %}
 
 
 
-    <div class="uk-grid-divider uk-child-width-expand@s" uk-grid style="background-color:#bb0404;color:white;margin-top:20px;">
-        <div style="text-align:center;margin-top:10px; margin-bottom:10px;">
-          <span class=".uk-text-lead">ติดต่อสอบถาม</span><br>
-          งานบัณฑิตศึกษา ชั้น3 อาหารบรรยายรวม 5
-          <br> คณะวิทยาศาสตร์และเทคโนโลยี มหาวิทยาลัยธรรมศาสตร์
-          <br>
-        </div>
-        <div style="text-align:left;">
-          <p style="margin-top:10px;">
-            <i class="fa fa-home"></i> ที่อยู่ : 99 ม.18 ต.คลองหนึ่ง อ.คลองหลวง จ.ปทุมธานี 12121
-            <br>
-            <i class="fa fa-phone"></i> โทรศัพท์ : 02-5644490 ต่อ 2094
-            <br>
-            <i class="fa fa-envelope"></i> อีเมล์ : grad@sci.tu.ac.th
-          </p>
-          <br>
-        </div>
-    </div>
-    <div style="background-color:#c4ce00;color:white;height:30px;">
-      <a style="visibility:hidden">a</a>
-    </div>
+{% block footer %}
+  {% include 'home/base2.html' %}
+{% endblock %}
 
-</body>
-</html>
+  

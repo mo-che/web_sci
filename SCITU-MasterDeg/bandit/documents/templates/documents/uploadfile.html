@@ -1,0 +1,25 @@
+{% load staticfiles %}
+{% block header %}
+  {% include 'home/base.html' %}
+{% endblock %}
+
+
+         
+<div style="margin-left:20px; margin-top:20px;">
+    <div class="uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid style="font-family: Kanit">
+        {% if request.user.is_authenticated %}
+        <!-- <input type="button" value="upload file"> -->
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="font-family: Kanit">Upload</button>
+          </form>
+          <!-- <a href="{% url 'logout' %}">logout</a> -->
+        {% endif %}
+    
+    </div>
+</div>
+
+{% block footer %}
+  {% include 'home/base2.html' %}
+{% endblock %}

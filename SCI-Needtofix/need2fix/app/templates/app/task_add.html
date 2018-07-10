@@ -2,7 +2,7 @@
 {% block title %} แจ้งซ่อม {% endblock %}
 {% block content %}
 <div style="margin:50px;">
-<div id='content'>
+<div id='content' style="margin-top:5%">
   <form class="uk-form-horizontal">
     <fieldset class="uk-fieldset">
       <legend class="uk-legend"> กรุณากรอกข้อมูลแจ้งซ่อม </legend>
@@ -38,8 +38,6 @@
         <!-- <select class="uk-select" v-model="formInput.room">
           <option v-for="room in buildingInfo[formInput.building][formInput.floor]"> [[room]] </option>
         </select> -->
-
-
       </div>
       <div class="js-upload" uk-form-custom>
         <input type="file" ref='imageUpload' v-on:change="imageHandle()">
@@ -50,8 +48,10 @@
     </fieldset>
   </form>
   <br>
-  <button class="uk-button uk-button-default" v-on:click="submitRequest()"  v-bind:disabled="checkSubmitable()">ส่งคำร้อง</button>
+  <button class="uk-button uk-button-default" v-on:click="submitRequest()"  v-bind:disabled="checkSubmitable() ">ส่งคำร้อง</button>
 </div>
+</div>
+
 <style type="text/css">
   .imagePreviewer {
     width: 400px;
@@ -60,6 +60,7 @@
     padding: 5px;
   }
 </style>
+
 {% endblock %}
 
 {% block script %}
@@ -141,7 +142,9 @@ new Vue({
       axios.post('/api/task/', formData)
         .then((res) => {
           alert('ส่งคำร้องเรียบร้อย')
-          this.clearForm()
+          window.location = "/task/list";
+          
+          
         })
         .catch((error) => {
           s = 'เกิดข้อผิดพลาด'

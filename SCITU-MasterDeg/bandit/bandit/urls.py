@@ -19,7 +19,8 @@ from django.conf.urls import url,include
 
 from django.conf import settings
 from django.views.static import serve
-
+from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     url('admin/', admin.site.urls),
@@ -28,7 +29,9 @@ urlpatterns = [
     url('meeting/', include('meeting.urls')),
     url('contact/', include('contact.urls')),
     url('news/', include('news.urls')),
-    url('register/', include('register.urls'))
+    url('register/', include('register.urls')),
+    url(r'^login/$', auth_views.login, name='login'),
+    url(r'^logout/$', auth_views.logout, name='logout'),
 
 ]
 
