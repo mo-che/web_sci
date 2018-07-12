@@ -1,0 +1,14 @@
+django-extensions
+django-filter
+django-social-auth
+django-ordered-model
+Django==2.0.3
+git+https://github.com/scitu/django-tuauth.git
+djangorestframework
+markdown
+Pillow==5.0.0
+pytz==2018.3
+psycopg2
+social-auth-app-django
+xlwt
+pandas

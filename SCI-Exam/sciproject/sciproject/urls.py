@@ -25,8 +25,9 @@ from exam import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'api/', include(router.urls)),
+    path('', views.LacListView),
     path('form/', views.LacListView, name='LacListView'),
-    path('Dowmload/', views.SubjectListView, name='SubjectListView'),
+    path('Download/', views.SubjectListView, name='SubjectListView'),
     path('jso/', views.jo, name='json'),
     path('oauth/', include('social_django.urls', namespace='social')),
     path(r'logout/', auth_views.logout, {'next_page': '/form'}, name='logout'),

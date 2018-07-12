@@ -137,8 +137,9 @@ def saved(request):
         instru10_object = Subject.objects.create(examiner=myInput10,Sid=sid,student=TotalStu10,ratio=float(ratio10),T_type=test_type,S_type=instructor_type,\
         Degree=radio,yeasr=academic_year,amount=amount)
 
+    thing_list = Subject.objects.order_by().values_list('yeasr',flat=True).distinct()
 
-    return render(request,'dw.html')
+    return render(request, 'dw.html', {'thing_list':thing_list})
 
 def download(request):
 
@@ -187,7 +188,7 @@ def export(request):
     font_style = xlwt.XFStyle()
     font_style.font.bold = True
 
-    columns = ['ชื่อผู้ตรวจข้อสอบ','อัตตราส่วนในการตรวจ','จำนวนนักศึกษาที่เข้าสอบ','วิชา','ประเภทข้อสอบ','ประเภทการสอน','ระดับ','ปีการศึกษา','จำนวนเงิน บาท/สต.']
+    columns = ['ชื่อผู้ตรวจข้อสอบ','อัตราส่วนในการตรวจ','จำนวนนักศึกษาที่เข้าสอบ','วิชา','ประเภทข้อสอบ','ประเภทการสอน','ระดับ','ปีการศึกษา','จำนวนเงิน บาท']
 
     for col_num in range(len(columns)):
         ws.write(row_num, col_num, columns[col_num], font_style)
@@ -220,7 +221,7 @@ def export(request):
                     elif row[4] == '1':
                         ws.write(row_num, col_num, 'ปรนัย', font_style)
                     elif row[4] == '2' : 
-                        ws.write(row_num, col_num, 'อัตนัย+ปร+ปรนัย',font_style)
+                        ws.write(row_num, col_num, 'อัตนัย+ปรนัย',font_style)
                     else:
                         ws.write(row_num, col_num, 'สัมภาษณ์ + ปฏิบัติ', font_style)
                 elif col_num == 5:

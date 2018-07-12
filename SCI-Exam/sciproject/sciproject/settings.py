@@ -25,11 +25,11 @@ SECRET_KEY = '-*zw^9^+ofz0*uc4v5sfg)@a2r3e(v2tm+#x@nsbr#iq1fzw)m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-SOCIAL_AUTH_TU_KEY = 'ZVtaizivcKdtMGjojcX7UkprEDhKch8fi6GU5WVD'
-SOCIAL_AUTH_TU_SECRET = '32azvESeVXN7OD0DaLoJI47BzSmpdy5JXDpmm4KNS69iH0erlf4bA4j0pfgG754a6Cc0Ewjg8IpHOFPos55jW4EwhYJHfyDjKMnmTyQ06cmvT7xEU3EdaFdh6pW9Jdfz'
+SOCIAL_AUTH_TU_KEY = 'B5Tj2w67duvh526HFKfq56r26KZDLqErOAhJFSHZ'
+SOCIAL_AUTH_TU_SECRET = 'MqeaPPYwDavT7btUqhFr2Hp8gnfHBlh4WJicA4quccxPnESmvoCjzkuNeOcx2Sdlc0KpLc7sxYqvQaJnkKG59OT7jjdko85tdIotle8M71ngm9sbspMZwINspGhjSG45'
 
-ALLOWED_HOSTS = ['web3','localhost']
-LOGIN_REDIRECT_URL = '/form'
+ALLOWED_HOSTS = []
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
@@ -102,13 +102,8 @@ WSGI_APPLICATION = 'sciproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db_exam',
-        'PORT': 5432,
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
