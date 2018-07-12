@@ -35,3 +35,24 @@ class TaskViewSet(mixins.CreateModelMixin,
                    viewsets.GenericViewSet):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
+
+
+# class UpdateTask(mixins.CreateModelMixin, 
+#                    mixins.ListModelMixin,
+#                    mixins.RetrieveModelMixin,
+#                    mixins.UpdateModelMixin,
+#                    viewsets.GenericViewSet):
+#     queryset = Task.objects.all()
+#     serializer_class = TaskChangeSerializer
+#     # permission_classes = (permissions.IsAuthenticated,)
+
+#     def update(self, request, *args, **kwargs):
+#         instance = self.get_object()
+#         instance.image = request.data.get(instance.image.url)
+#         instance.save()
+
+#         serializer = self.get_serializer(instance)
+#         serializer.is_valid(raise_exception=True)
+#         self.perform_update(serializer)
+
+#         return Response(serializer.data)

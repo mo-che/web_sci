@@ -13,6 +13,8 @@ services:
     command: sh /code/run.sh
     volumes:
       - ./need2fix:/code
+      - /var/www/static/:/var/www/static/
+      - /var/www/media/:/var/www/media/
     depends_on:
       - db_needtofix
 
@@ -23,6 +25,7 @@ services:
         - "80:80"
       volumes:
         - ./nginx/:/etc/nginx/conf.d/
-        - ./need2fix:/code
+        - /var/www/static/:/var/www/static/
+        - /var/www/media/:/var/www/media/
       depends_on:
         - web_needtofix

@@ -16,7 +16,7 @@
             </select>
             <label>ผู้รับผิดชอบ</label>
             <select select class="uk-select" v-model="formData.operator" >
-              <option v-for="mec in mechanicList" v-bind:value="mec.id" > [[mec.username]] [[mec.first_name]] </option>
+              <option v-for="mec in mechanicList" v-bind:value="mec.id" > [[mec.first_name]] [[mec.last_name]] </option>
             </select>
         {%else%}
             <label>สถานะ</label>
@@ -27,7 +27,7 @@
             </select>
             <label>ผู้รับผิดชอบ</label>
             <select select class="uk-select" v-model="formData.operator" disabled>
-              <option v-for="mec in mechanicList" v-bind:value="mec.id" > [[mec.username]] [[mec.first_name]] </option>
+              <option v-for="mec in mechanicList" v-bind:value="mec.id" > [[mec.first_name]] [[mec.last_name]] </option>
             </select>
         {%endif%}
 
@@ -116,6 +116,7 @@ var content = new Vue({
     
           .then((response) => {
             console.log(response.data)
+            window.location ='/task/list';
           })
           .catch((error) => {
             s = 'เกิดข้อผิดพลาด'

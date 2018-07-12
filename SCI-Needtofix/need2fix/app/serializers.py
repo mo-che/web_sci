@@ -28,3 +28,15 @@ class TaskSerializer(serializers.ModelSerializer):
             return super(TaskSerializer, self).update(instance, validated_data)
         else:
             raise PermissionDenied()
+
+#     def save_form_data(self, instance, validated_data):
+#         if validated_data and validated_data[0]: # Replace file
+# #            self.delete_file(instance)
+#             super(RemovableFileField, self).save_form_data(instance, validated_data[0])
+#         if validated_data and validated_data[1]: # Delete file
+#             self.delete_file(instance)
+#             setattr(instance, self.name, None)
+
+# class TaskChangeSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Task
